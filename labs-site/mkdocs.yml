@@ -1,0 +1,11 @@
+site_name: Site with python labs
+
+nav:
+  - Introduction: index.md
+  - About me: author.md
+  - Labs:
+      - List of labs: labs.md
+      - Lab1: labs/lab1.md
+      - Lab2: labs/lab2.md
+
+
