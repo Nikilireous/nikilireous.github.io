@@ -1,5 +1,7 @@
 site_name: Site with python labs
 
+theme: minty
+
 nav:
   - Introduction: index.md
   - About me: author.md
