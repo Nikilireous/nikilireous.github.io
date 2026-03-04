@@ -29,4 +29,4 @@
 - Получены навыки настройки конфигурации mkdocs.yml.
 - Успешно развёрнут статический сайт с помощью GitHub Pages.
 
-***[Подробнее о лабораторной работе](https://github.com/Nikilireous/nikilireous.github.io)***
+***[Ссылка на репозиторий](https://github.com/Nikilireous/nikilireous.github.io)***

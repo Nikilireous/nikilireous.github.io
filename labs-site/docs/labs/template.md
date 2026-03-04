@@ -18,4 +18,4 @@ print('3000 cycles')
 
 - {Задача1}
 
-***[Подробнее о лабораторной работе](https://youtu.be/dQw4w9WgXcQ?si=vfHi6yoUeq4DJz1v)***
+***[Ссылка на репозиторий](https://youtu.be/dQw4w9WgXcQ?si=vfHi6yoUeq4DJz1v)***
