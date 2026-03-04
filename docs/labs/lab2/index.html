@@ -103,6 +103,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">Задачи</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_19" class="nav-link">Вывод</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -115,10 +123,132 @@
 <p>Численные вычисления и анализ данных с использованием NumPy.</p>
 <h2 id="_2">Цели работы</h2>
 <ul>
-<li>Узнать о возможностях использования библиотеки NumPy.</li>
-<li>Освоить базовые методы представленной библиотеки.</li>
+<li>Узнать о возможностях использования библиотек NumPy, Pandas, Matplotlib, Seaborn.</li>
+<li>Освоить базовые методы представленных библиотек.</li>
 </ul>
-<p><strong><em><a href="https://github.com/Nikilireous/Python-Labs/Semester-2/Task-2">Подробнее о лабораторной работе</a></em></strong></p></div>
+<h2 id="_3">Задачи</h2>
+<h3 id="_4">Создание массива</h3>
+<pre><code class="language-python">def create_vector() -&gt; np.ndarray:
+    return np.arange(10)
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_5">Создание матрицы</h3>
+<pre><code class="language-python">def create_matrix() -&gt; np.ndarray[tuple[float]]:
+    return np.random.rand(5,5)
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_6">Преобразование вектора</h3>
+<pre><code class="language-python">def reshape_vector(vec: np.ndarray) -&gt; np.ndarray:
+    return vec.reshape(2,5)
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_7">Транспонирование матрицы</h3>
+<pre><code class="language-python">def transpose_matrix(mat: np.ndarray) -&gt; np.ndarray:
+    return mat.T
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_8">Сложение векторов одинаковой длины</h3>
+<pre><code class="language-python">def vector_add(a: np.ndarray, b: np.ndarray) -&gt; np.ndarray:
+    return a + b
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_9">Умножение вектора на число</h3>
+<pre><code class="language-python">def scalar_multiply(vec: np.ndarray, scalar: float | int) -&gt; np.ndarray:
+    return vec * scalar
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_10">Поэлементное умножение</h3>
+<pre><code class="language-python">def elementwise_multiply(a: np.ndarray, b: np.ndarray) -&gt; np.ndarray:
+    return a * b
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_11">Скалярное произведение</h3>
+<pre><code class="language-python">def dot_product(a: np.ndarray, b: np.ndarray) -&gt; float:
+    return np.dot(a, b)
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_12">Умножение матриц</h3>
+<pre><code class="language-python">def matrix_multiply(a: np.ndarray, b: np.ndarray) -&gt; np.ndarray:
+    return a @ b
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_13">Определитель матрицы</h3>
+<pre><code class="language-python">def matrix_determinant(a: np.ndarray) -&gt; float:
+    return np.linalg.det(a)
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_14">Обратная матрица</h3>
+<pre><code class="language-python">def matrix_inverse(a: np.ndarray) -&gt; np.ndarray:
+    return np.linalg.inv(a)
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="ax-b">Решение системы вида: Ax = b</h3>
+<pre><code class="language-python">def solve_linear_system(a: np.ndarray, b: np.ndarray) -&gt; np.ndarray:
+    return np.linalg.solve(a, b)
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="numpy-csv-">Получение NumPy массива из CSV-файла</h3>
+<pre><code class="language-python">def load_dataset(path: str = &quot;data/students_scores.csv&quot;) -&gt; np.ndarray:
+    return pd.read_csv(path).to_numpy()
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_15">Получение некоторых характеристических данных массива</h3>
+<pre><code class="language-python">def statistical_analysis(data: np.ndarray) -&gt; dict:
+        return {
+        &quot;mean&quot;: np.mean(data),
+        &quot;median&quot;: np.median(data),
+        &quot;std&quot;: np.std(data),
+        &quot;min&quot;: np.min(data),
+        &quot;max&quot;: np.max(data),
+        &quot;25&quot;: np.percentile(data, 25),
+        &quot;75&quot;: np.percentile(data, 75)
+    }
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="min-max">Min-Max нормализация</h3>
+<pre><code class="language-python">def normalize_data(data: np.ndarray) -&gt; np.ndarray:
+    return (data - np.min(data)) / (float(np.max(data)) - np.min(data))
+</code></pre>
+<p>Воспроизведена формула Min-Max нормализации для массива данных.</p>
+<h3 id="_16">Построение гистограммы распределения</h3>
+<pre><code class="language-python">def plot_histogram(data: np.ndarray) -&gt; None:
+    plt.hist(data)
+    plt.title(&quot;Гистограмма распределения оценок по математике.&quot;)
+    plt.xlabel(&quot;Оценка&quot;)
+    plt.ylabel(&quot;Количество учащихся, получивших оценку&quot;)
+
+    plt.savefig(&quot;plots/histogram.png&quot;)
+    plt.close()
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_17">Построение тепловой карты корреляции</h3>
+<pre><code class="language-python">def plot_heatmap(matrix: np.ndarray) -&gt; None:
+    sns.heatmap(matrix)
+    plt.title(&quot;Тепловая карта корреляции предметов&quot;)
+
+    plt.savefig(&quot;plots/heatmap.png&quot;)
+    plt.close()
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h3 id="_18">Построение графика зависимости</h3>
+<pre><code class="language-python">def plot_line(x: np.ndarray, y: np.ndarray) -&gt; None:
+    plt.plot(x, y, &quot;bo&quot;)
+    plt.title(&quot;График студентов и их оценок&quot;)
+    plt.xlabel(&quot;Номер студента&quot;)
+    plt.ylabel(&quot;Оценки&quot;)
+
+    plt.savefig(&quot;plots/students_marks.png&quot;)
+    plt.close()
+</code></pre>
+<p>Реализовано с помощью базового функционала библиотеки.</p>
+<h2 id="_19">Вывод</h2>
+<p>Были достигнуты все поставленные задачи:</p>
+<ul>
+<li>Получены знания о работе названных выше библиотек.</li>
+<li>Отработаны основные функции для взаимодействия с массивами (векторами, матрицами).</li>
+<li>Построены различные графики с помощью библиотек визуализаций.</li>
+</ul>
+<p><strong><em><a href="https://github.com/Nikilireous/Python-Labs/Semester-2/Task-2">Ссылка на репозиторий</a></em></strong></p></div>
             </div>
         </div>
 
