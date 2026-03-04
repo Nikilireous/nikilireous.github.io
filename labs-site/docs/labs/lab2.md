@@ -184,4 +184,4 @@ def plot_line(x: np.ndarray, y: np.ndarray) -> None:
 - Построены различные графики с помощью библиотек визуализаций.
 
 
-***[Ссылка на репозиторий](https://github.com/Nikilireous/Python-Labs/Semester-2/Task-2)***
+***[Ссылка на репозиторий](https://github.com/Nikilireous/Python-Labs/tree/main/Semester%202/Task%202)***
