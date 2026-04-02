@@ -1,0 +1,76 @@
+# Лабораторная работа №3.
+
+## Тема
+CI/CD для статического сайта в SourceCraft
+
+## Цели работы
+- Реализовать сценарий автоматического развертывания статического сайта, построенного на движке mkdocs с использованием платформы Sourcecraft.
+- Реализовать сценарий автоматического развертывания этого же статического сайта с помощью GitHub Actions.
+
+
+## Код
+```yaml
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build MkDocs site
+        run: mkdocs build --strict
+        with:
+          path: './labs-site'
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+
+## Вывод
+Были достигнуты все поставленные задачи:
+
+- Создано зеркало сайта на Soursecraft.
+- Автоматизировано развёртывание сайта с помощью CI/CD.
+
+***[Ссылка на репозиторий](https://sourcecraft.dev/golubkoffnickita/portfolio-site)***
