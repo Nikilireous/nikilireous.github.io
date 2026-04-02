@@ -32,7 +32,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -49,9 +49,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build MkDocs site
+        working-directory: ./labs-site
         run: mkdocs build --strict
-        with:
-          path: './labs-site'
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
@@ -59,7 +58,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site'
+          path: './labs-site/site'
 
       - name: Deploy to GitHub Pages
         id: deployment
